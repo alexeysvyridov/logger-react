@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'react-moment';
 const logItem = ({log}) => {
   return (
-   <li className='collectiom-item'>
+   <li className='collection-item'>
      <div>
        <a href='#edit-log-modal'
         className={
@@ -16,8 +16,8 @@ const logItem = ({log}) => {
           <span className='black-text'>{log.tech}</span> on{' '}
           <moment format='MMMM Do YYYY, h:mm:ss a'>{log.date}</moment>
         </span>
-        <a href="#!" className="secondaty-content">
-          <i className="material-icon grey-text">delete</i>
+        <a href="#!" className="secondary-content">
+          <i className="material-icons grey-text">delete</i>
         </a>
      </div>
    </li>
