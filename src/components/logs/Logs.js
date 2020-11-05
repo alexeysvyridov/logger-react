@@ -11,7 +11,6 @@ const Logs = () => {
     //proxy http://localhost
     const res = await fetch('/logs');
     const data = await res.json();
-
     setLogs(data);
     setLoading(false);
   };

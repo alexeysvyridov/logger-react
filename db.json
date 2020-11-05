@@ -4,21 +4,21 @@
       "id": 1,
       "message": "Change hard drive on workstation 005",
       "attention": false,
-      "date": "15-10-2020",
+      "date": "2020-04-19T12:59-0500",
       "tech": "Sam Smith"
     },
     {
       "id": 2,
       "message": "Workstation 007 not posting",
       "attention": true,
-      "date": "15-10-2020",
+      "date": "2020-06-22T11:49-0500",
       "tech": "John Doe"
     },
     {
       "id": 3,
       "message": "Changed memory on workstation 050",
       "attention": false,
-      "date": "15-10-2020",
+      "date": "2020-03-22T14:41-0500",
       "tech": "Sara Wilson"
     }
   ],
