@@ -4,23 +4,24 @@ const modalStyle = {
   width: '75%',
   height: '75%'
 };
-const AddLogModal = () => {
-  const [message, setMessage] = useState('');
-  const [attention, setAttention] = useState(false);
-  const [tech, setTech] = useState('');
-  const onSubmit = () => {
-      if(message === '' || tech === '') {
-      M.toast({html:"Please enter a message and tech"})
-    } else {
-      console.log(message, tech, attention);
-      setMessage('');
-      setAttention('false');
-      setTech('');
-    }
-  };
+const EditLogModal = () => {
+const [message, setMessage] = useState('');
+const [attention, setAttention] = useState(false);
+const [tech, setTech] = useState('');
+const onSubmit = () => {
+    if(message === '' || tech === '') {
+    M.toast({html:"Please enter a message and tech"})
+  } else {
+    console.log(message, tech, attention);
+    setMessage('');
+    setAttention('false');
+    setTech('');
+  }
+
+}
 
   return (
-    <div id="add-log-modal" className="modal" style={modalStyle}>
+    <div id="edit-log-modal" className="modal" style={modalStyle}>
       <div className="modal-content">
         <h4>Enter System Log</h4>
         <div className="row">
@@ -69,4 +70,4 @@ const AddLogModal = () => {
   )
 
 }
-export default AddLogModal;
+export default EditLogModal;
