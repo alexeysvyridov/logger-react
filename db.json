@@ -1,5 +1,27 @@
 {
-  "logs": [],
+  "logs": [
+    {
+      "message": "change network",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2020-11-14T13:24:57.049Z",
+      "id": 1
+    },
+    {
+      "message": "change network",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2020-11-14T13:42:00.761Z",
+      "id": 2
+    },
+    {
+      "message": "change network",
+      "attention": true,
+      "tech": "Sara Wilson",
+      "date": "2020-11-14T13:48:43.769Z",
+      "id": 3
+    }
+  ],
   "techs": [
     {
       "id": 1,

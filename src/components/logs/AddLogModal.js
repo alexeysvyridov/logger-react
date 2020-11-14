@@ -5,7 +5,6 @@ import M from 'materialize-css/dist/js/materialize';
 import { addLog } from '../../actions/logActions';
 
 const AddLogModal = ({addLog}) => {
-  console.log(addLog);
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
