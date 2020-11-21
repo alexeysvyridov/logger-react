@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import TechItem from './TechItem'
 
 const TechListModal = () => {
-  const [techs, setTechs] = useState('');
+  const [techs, setTechs] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -11,8 +11,7 @@ const TechListModal = () => {
 
   const getTechs = async () => {
     setLoading(true)
-
-    //proxy http://localhost
+     //proxy http://localhost  
     const res = await fetch('/techs');
     const data = await res.json();
     
@@ -26,7 +25,7 @@ const TechListModal = () => {
       <div className="modal-content">
         <h4>Technician List</h4>
         <ul className="collection">
-        {loading && techs && techs.map(tech => (
+        {loading && techs.map(tech => (
           <TechItem tech={tech} key={tech.id}/>
           ))}
         </ul>

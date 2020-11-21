@@ -3,6 +3,7 @@ import {
   SET_LOADING, 
   LOGS_ERROR, 
   ADD_LOG, 
+  SEARCH_LOGS,
   UPDATE_CURRENT,
   DELETE_LOG,
   SET_CURRENT,
@@ -42,13 +43,13 @@ export const getLogs = () => async (dispatch) => {
       payload: data
     })
   }catch(err) {
-    console.log(err);
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err
     })
   }
 };
+
 export const deleteLog = (id) => async (dispatch) => {
   try {  
     setLoading();
@@ -68,12 +69,14 @@ export const deleteLog = (id) => async (dispatch) => {
     })
   }
 };
+
 export const setCurrent = (log) => {
   return {
     type: SET_CURRENT,
     payload: log
   };
 };
+
 const clearCurrent = () => {
   return {
     type: CLEAR_CURRENT,
@@ -100,6 +103,25 @@ export const updateLog = (log) => async (dispatch) => {
     dispatch({
       type: LOGS_ERROR,
       payload: err.response.data
+    })
+  }
+};
+
+export const searchLogs = (text) =>  async (dispatch) => {
+  try {  
+    setLoading();
+    const res = await fetch(`/logs?q=${text}`);
+    const data = await res.json();
+    console.log(data);
+    dispatch({
+      type: SEARCH_LOGS,
+      payload: data
+    });
+
+  } catch(err) {
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err
     })
   }
 };

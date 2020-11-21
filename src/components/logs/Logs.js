@@ -4,13 +4,12 @@ import Logitem from './LogItem';
 import Preloader from '../layout/Preloader';
 import PropTypes  from 'prop-types';
 import { getLogs } from '../../actions/logActions';
-const Logs = ({log : { logs, loading }, getLogs }) => {
+const Logs = ({ log : { logs, loading }, getLogs }) => {
 
   useEffect(() => {
     getLogs();
     //eslint-disable-next-line
   }, []);
-
 
   if(loading || logs === null) {
     return <Preloader />;
@@ -20,7 +19,7 @@ const Logs = ({log : { logs, loading }, getLogs }) => {
       <li className="collection-header">
         <h4 className="center">System logs</h4>
       </li>
-      { !loading && logs.loading === 0 ? 
+      { !loading && logs.length === 0 ?  
         (<p className="center">No logges to show...</p>) :
         (logs.map( (log) =>  <Logitem log={log} key={log.id}/>))
       }
@@ -34,4 +33,4 @@ Logs.propTypes ={
 const mapStateToProps = (state) => ({
   log: state.log,
 })
-export default connect(mapStateToProps, {getLogs})(Logs)
+export default connect(mapStateToProps, { getLogs })(Logs)  
