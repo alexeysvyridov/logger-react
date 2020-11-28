@@ -17,7 +17,7 @@ export const addLog = (log) => async (dispatch) => {
       method: 'POST',
       body: JSON.stringify(log),
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       }
     });
     const data = await res.json();
@@ -28,7 +28,7 @@ export const addLog = (log) => async (dispatch) => {
   } catch(err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response
     });
   }
 };
