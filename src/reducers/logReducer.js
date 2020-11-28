@@ -3,7 +3,7 @@ import {
   SET_LOADING, 
   LOGS_ERROR, 
   ADD_LOG,
-  UPDATE_CURRENT,
+  UPDATE_LOG,
   SET_CURRENT,
   CLEAR_CURRENT,
   DELETE_LOG,
@@ -40,7 +40,7 @@ export default (state = initialState, action) => {
         ...state,
         logs: action.payload
       }
-    case UPDATE_CURRENT:
+    case UPDATE_LOG:
       return {
         ...state,
         logs: state.logs.map(log => log.id === action.payload.id ? action.payload : log)

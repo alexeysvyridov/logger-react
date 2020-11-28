@@ -1,25 +1,14 @@
 {
   "logs": [
     {
-      "message": "change network",
-      "attention": false,
-      "tech": "Sam Smith",
-      "date": "2020-11-14T13:24:57.049Z",
+      "message": "1122 wireless down",
+      "attention": true,
+      "tech": "John Doe",
+      "date": "2020-11-22T20:42:03.662Z",
       "id": 1
     },
     {
-      "message": "change network",
-      "attention": false,
-      "tech": "John Doe",
-      "date": "2020-11-14T13:42:00.761Z",
       "id": 2
-    },
-    {
-      "message": "add new log",
-      "attention": true,
-      "tech": "Sara Wilson",
-      "date": "2020-11-14T15:02:31.412Z",
-      "id": 3
     }
   ],
   "techs": [

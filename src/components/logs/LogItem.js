@@ -13,11 +13,11 @@ const logItem = ({log, deleteLog, setCurrent}) => {
   return (
    <li className='collection-item'>
      <div>
-       <a href='#add-log-modal'
+       <a href='#edit-log-modal'
         className={
         `modal-trigger ${log.attention ?
-         'red-text': 
-         'blue-text'}`}
+        'red-text': 
+        'blue-text'}`}
         onClick={() => setCurrent(log)}>
           {log.message}
         </a>
@@ -29,7 +29,7 @@ const logItem = ({log, deleteLog, setCurrent}) => {
         </span>
         <a href="#!"  onClick={onDelete} className="secondary-content">
           <i className="material-icons grey-text">delete</i>
-        </a>
+        </a>  
      </div>
    </li>
   )

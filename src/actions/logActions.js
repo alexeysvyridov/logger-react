@@ -4,7 +4,7 @@ import {
   LOGS_ERROR, 
   ADD_LOG, 
   SEARCH_LOGS,
-  UPDATE_CURRENT,
+  UPDATE_LOG,
   DELETE_LOG,
   SET_CURRENT,
   CLEAR_CURRENT
@@ -45,7 +45,7 @@ export const getLogs = () => async (dispatch) => {
   }catch(err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err
+      payload: err.response.statusText
     })
   }
 };
@@ -92,14 +92,13 @@ export const updateLog = (log) => async (dispatch) => {
         'Content-type': 'application/json',
       }
     });
-    const data = res.json();
+    const data = await res.json();
     dispatch({
-      type: UPDATE_CURRENT,
+      type: UPDATE_LOG,
       payload: data
     });
 
   } catch(err) {
-    console.log(err);
     dispatch({
       type: LOGS_ERROR,
       payload: err.response.data
